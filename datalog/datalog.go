@@ -107,6 +107,18 @@ func (i Integer) String() string {
 	return fmt.Sprintf("%d", i)
 }
 
+func (i Integer) BitwiseAnd(other Integer) Integer {
+	return i & other
+}
+
+func (i Integer) BitwiseOr(other Integer) Integer {
+	return i | other
+}
+
+func (i Integer) BitwiseXor(other Integer) Integer {
+	return i ^ other
+}
+
 type String uint64
 
 func (String) Type() TermType      { return TermTypeString }

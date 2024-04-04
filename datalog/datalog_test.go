@@ -142,6 +142,19 @@ func TestNumbers(t *testing.T) {
 	}
 }
 
+func TestBitwiseOperations(t *testing.T) {
+	a := Integer(6) // Example: 110 in binary
+	b := Integer(3) // Example: 011 in binary
+
+	andResult := a.BitwiseAnd(b) // Should be 2 (010 in binary)
+	orResult := a.BitwiseOr(b)   // Should be 7 (111 in binary)
+	xorResult := a.BitwiseXor(b) // Should be 5 (101 in binary)
+
+	require.Equal(t, Integer(2), andResult, "Bitwise AND result is incorrect")
+	require.Equal(t, Integer(7), orResult, "Bitwise OR result is incorrect")
+	require.Equal(t, Integer(5), xorResult, "Bitwise XOR result is incorrect")
+}
+
 func TestString(t *testing.T) {
 	w := NewWorld()
 	syms := &SymbolTable{}
